@@ -50,15 +50,10 @@ public class MyStepdefs {
         driver.findElement(By.cssSelector("#FirstName")).sendKeys(firstname);
     }
 
-
     @And("I also have entered {string}")
-    public void iAlsoHaveEntered(String name) {
-        if(name.equals("last")) {
-            driver.findElement(By.cssSelector("#LastName")).sendKeys(name);
-        } else if (name.equals("first")) {
-            driver.findElement(By.cssSelector("#FirstName")).sendKeys(name);
-        }
+    public void iAlsoHaveEntered(String lastname) {
 
+        driver.findElement(By.cssSelector("#LastName")).sendKeys(lastname);
 
     }
 
@@ -112,7 +107,6 @@ public class MyStepdefs {
             String expected = "Last name is required.";
             assertEquals(expected, actual);
         }
-
 
     }
 }
